@@ -1,0 +1,123 @@
+---
+export const prerender = true;
+
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import GridLayout from "@layouts/grid.astro";
+import BackwardButton from "@components/backwardButton.astro";
+
+const title = "Portfolio";
+const description = "Drone photography and videography portfolio featuring aerial captures";
+
+// Get all posts for portfolio
+const allPosts = await getCollection("posts");
+const photographyCount = allPosts.length;
+const videographyCount = allPosts.length;
+const projectsCount = allPosts.length;
+---
+
+<GridLayout title={title} description={description}>
+    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <BackwardButton currentPath={Astro.url.pathname} />
+            <div class="space-y-8 mt-2">
+                <!-- Header -->
+                <div class="text-center space-y-4">
+                    <h1 class="text-4xl font-bold text-neutral-900 dark:text-neutral-100">
+                        Portfolio
+                    </h1>
+                    <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                        Explore our collection of aerial photography and videography projects
+                    </p>
+                </div>
+
+                <!-- Portfolio Navigation Grid -->
+                <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <!-- Photography -->
+                    <a href="/portfolio/photography/" class="group">
+                        <div class="card-base p-8 border border-(--line-color) hover:border-(--primary) transition-all duration-300 hover:shadow-lg hover:shadow-(--primary)/10">
+                            <div class="text-center space-y-4">
+                                <div class="w-20 h-20 rounded-lg bg-(--primary)/10 flex items-center justify-center mx-auto group-hover:bg-(--primary)/20 transition-colors">
+                                    <Icon name="material-symbols:photo-camera" class="text-(--primary) text-3xl" />
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-(--primary) transition-colors">
+                                        Photography
+                                    </h2>
+                                    <p class="text-neutral-600 dark:text-neutral-400 mt-2">
+                                        Aerial photography collection
+                                    </p>
+                                    <p class="text-sm text-(--primary) font-medium mt-1">
+                                        {photographyCount} projects
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Videography -->
+                    <a href="/portfolio/videography/" class="group">
+                        <div class="card-base p-8 border border-(--line-color) hover:border-(--primary) transition-all duration-300 hover:shadow-lg hover:shadow-(--primary)/10">
+                            <div class="text-center space-y-4">
+                                <div class="w-20 h-20 rounded-lg bg-(--primary)/10 flex items-center justify-center mx-auto group-hover:bg-(--primary)/20 transition-colors">
+                                    <Icon name="material-symbols:videocam" class="text-(--primary) text-3xl" />
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-(--primary) transition-colors">
+                                        Videography
+                                    </h2>
+                                    <p class="text-neutral-600 dark:text-neutral-400 mt-2">
+                                        Aerial videography projects
+                                    </p>
+                                    <p class="text-sm text-(--primary) font-medium mt-1">
+                                        {videographyCount} projects
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Projects -->
+                    <a href="/portfolio/projects/" class="group">
+                        <div class="card-base p-8 border border-(--line-color) hover:border-(--primary) transition-all duration-300 hover:shadow-lg hover:shadow-(--primary)/10">
+                            <div class="text-center space-y-4">
+                                <div class="w-20 h-20 rounded-lg bg-(--primary)/10 flex items-center justify-center mx-auto group-hover:bg-(--primary)/20 transition-colors">
+                                    <Icon name="material-symbols:work" class="text-(--primary) text-3xl" />
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-(--primary) transition-colors">
+                                        Projects
+                                    </h2>
+                                    <p class="text-neutral-600 dark:text-neutral-400 mt-2">
+                                        Featured drone work
+                                    </p>
+                                    <p class="text-sm text-(--primary) font-medium mt-1">
+                                        {projectsCount} projects
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="text-center pt-8">
+                    <div class="inline-flex items-center gap-8 text-sm text-neutral-600 dark:text-neutral-400">
+                        <div class="flex items-center gap-2">
+                            <Icon name="material-symbols:flight" class="text-(--primary)" />
+                            <span>{allPosts.length} Total Flights</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <Icon name="material-symbols:photo-camera" class="text-(--primary)" />
+                            <span>{allPosts.length} Photos</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <Icon name="material-symbols:videocam" class="text-(--primary)" />
+                            <span>{allPosts.length} Videos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</GridLayout>

@@ -1,23 +1,23 @@
 # 站点配置
 site:
     # 站点 URL（以斜杠结尾）
-    siteURL: "https://twilight.spr-aachen.com/"
+    siteURL: "https://airborne.observer/"
     # 站点标题
-    title: "Twilight"
+    title: "Airborne Observer"
     # 站点副标题
-    subtitle: "Blog Template"
+    subtitle: "Drone Photography & Videography Portfolio"
     # 语言配置
     lang: "en"
     # 翻译配置
     translate:
         # 启用翻译功能
-        enable: true
+        enable: false
         # 翻译服务
         service: "client.edge"
         # 显示语言选择下拉框
         showSelectTag: false
         # 自动检测用户语言
-        autoDiscriminate: true
+        autoDiscriminate: false
         # 翻译时忽略的 CSS 类名
         ignoreClasses:
             - "ignore"
@@ -53,23 +53,20 @@ site:
         src:
             # 桌面壁纸图片 (相对于 /public 目录; 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播)
             desktop:
-                - "/assets/images/desktopWallpaper_1.jpg"
-                - "/assets/images/desktopWallpaper_2.jpg"
-                - "/assets/images/desktopWallpaper_3.jpg"
+                - "/assets/images/20251025-153048-Hasselblad-L2D-20c-ir5280x2970-16900kb.jpg"
             # 移动壁纸图片 (相对于 /public 目录; 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播)
             mobile:
-                - "/assets/images/mobileWallpaper_1.jpg"
-                - "/assets/images/mobileWallpaper_2.jpg"
+                - "/assets/images/20251025-153048-Hasselblad-L2D-20c-ir5280x2970-16900kb.jpg"
         # 壁纸位置 ('top' | 'center' | 'bottom')
         position: "center"
         # 轮播配置 (fullscreen 和 banner 模式共享)
         carousel:
             # 为多张图片启用轮播，否则随机显示一张图片
-            enable: true
+            enable: false
             # 轮播间隔时间 (秒)
             interval: 3.6
             # 启用 Ken Burns 效果
-            kenBurns: true
+            kenBurns: false
         # Banner 模式专属配置
         banner:
             # 横幅文本配置
@@ -77,10 +74,11 @@ site:
                 # 在主页显示文本
                 enable: true
                 # 主标题
-                title: "Twilight"
+                title: "Airborne Observer"
                 # 副标题，支持单个字符串或字符串数组
                 subtitle:
-                    - "Illuminate Our Paths"
+                    - "Next Generation Aerial Capture"
+                    - "Capturing the World from Above"
                 # 副标题打字机效果
                 typewriter:
                     # 启用副标题打字机效果
@@ -94,9 +92,9 @@ site:
             # 横幅图片来源文本
             credit:
                 # 显示横幅图片来源文本
-                enable: false
+                enable: true
                 # 要显示的来源文本
-                text: "Describe"
+                text: "by Andras Kora"
                 # (可选) 原始艺术品或艺术家页面的 URL 链接
                 url: ""
             # 导航栏配置
@@ -139,7 +137,13 @@ site:
             # 动画周期 (s)
             interval: 1.5
     # favicon 配置
-    favicon: []
+    favicon:
+        - src: "/favicon/icon-light.png"
+          theme: "light"
+          sizes: "96x96"
+        - src: "/favicon/icon-dark.png"
+          theme: "dark"
+          sizes: "96x96"
     # bangumi 配置
     bangumi:
         # 用户 ID
@@ -164,35 +168,43 @@ navbar:
     links:
         - # 一级导航链接 - 主页 (预设)
             "Home"
-        - # 一级导航链接 - 归档 (预设)
-            "Archive"
-        - # 一级导航链接 - 展览 (自定义)
+        - # 一级导航链接 - 作品集 (自定义)
             # 导航名称
-            name: "Exhibition"
+            name: "Portfolio"
             # 导航链接
-            url: "/exhibition/"
+            url: "/portfolio/"
             # 导航图标
-            icon: "material-symbols:person"
+            icon: "mdi:quadcopter"
             # 导航描述
-            description: "A collection of my creative works and experiences"
+            description: "Drone photography and videography portfolio"
             # 子链接
             children:
-                - # 二级导航链接 - 项目 (预设)
-                    "Projects"
-                - # 二级导航链接 - 技能 (预设)
-                    "Skills"
-                - # 二级导航链接 - 历程 (预设)
-                    "Timeline"
-                - # 二级导航链接 - 日记 (预设)
-                    "Diary"
-                - # 二级导航链接 - 相册 (预设)
-                    "Albums"
-                - # 二级导航链接 - 动画 (预设)
-                    "Anime"
-        - # 一级导航链接 - 好友 (预设)
-            "Friends"
-        - # 一级导航链接 - 关于 (预设)
-            "About"
+                - # 二级导航链接 - 航拍照片 (自定义)
+                    name: "Photography"
+                    url: "/portfolio/photography/"
+                    icon: "material-symbols:image"
+                    description: "Aerial photography collection"
+                - # 二级导航链接 - 航拍视频 (自定义)
+                    name: "Videography"
+                    url: "/portfolio/videography/"
+                    icon: "material-symbols:videocam"
+                    description: "Aerial videography projects"
+                - # 二级导航链接 - 项目 (自定义)
+                    name: "Projects"
+                    url: "/portfolio/projects/"
+                    icon: "material-symbols:work"
+                    description: "Featured drone projects"
+        - # 一级导航链接 - 关于 (自定义)
+            name: "About"
+            url: "/about/"
+            icon: "material-symbols:info"
+            description: "About the drone pilot and equipment"
+        - # 一级导航链接 - YouTube (自定义)
+            name: "YouTube"
+            url: "https://www.youtube.com/@airborne.observer"
+            icon: "mdi:youtube"
+            description: "YouTube channel"
+            external: true
 
 # 侧边栏配置
 sidebar:
@@ -205,29 +217,29 @@ sidebar:
                 type: "profile"
                 # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
                 position: "top"
-            - # 组件 - 公告 (预设)
+            # - # 组件 - 公告 (预设)
                 # 类型
-                type: "announcement"
+            #   type: "announcement"
                 # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
-                position: "top"
-            - # 组件 - 文章类别 (预设)
+            #   position: "top"
+            # - # 组件 - 文章类别 (预设)
                 # 类型
-                type: "categories"
+            #   type: "categories"
                 # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
-                position: "sticky"
+            #   position: "sticky"
                 # 响应式配置
-                responsive:
+            #   responsive:
                     # 折叠阈值
-                    collapseThreshold: 5
-            - # 组件 - 文章标签 (预设)
+            #       collapseThreshold: 5
+            # - # 组件 - 文章标签 (预设)
                 # 类型
-                type: "tags"
+            #   type: "tags"
                 # 位置策略 ("top" 顶部固定 | "sticky" 粘性)
-                position: "sticky"
+            #   position: "sticky"
                 # 响应式配置
-                responsive:
+            #   responsive:
                     # 折叠阈值
-                    collapseThreshold: 20
+            #       collapseThreshold: 20
         # 右侧侧边栏
         right:
             - # 组件 - 文章目录 (预设)
@@ -248,20 +260,17 @@ sidebar:
 # 资料配置
 profile:
     # 头像配置 (相对于 /public 目录)
-    avatar: "/assets/images/avatar.jpg"
+    avatar: "/assets/images/airborne-observer-logo.svg"
     # 信息配置
-    name: "Twilight"
+    name: "Airborne Observer"
     # 简介配置
-    bio: "Hi"
+    bio: "Drone portfolio featuring aerial captures with a DJI Mavic 3 Pro"
     # 链接配置
     links:
-        - # 链接示例
-            # 名字
-            name: "GitHub"
-            # 图标
-            icon: "fa6-brands:github"
-            # 链接
-            url: "https://github.com/Spr-Aachen/Twilight"
+        - # YouTube 频道
+            name: "YouTube"
+            url: "https://www.youtube.com/@airborne.observer"
+            icon: "mdi:youtube"
 
 # 公告配置
 announcement:
@@ -360,38 +369,7 @@ particle:
 # 音乐播放器配置
 musicPlayer:
     # 启用音乐播放器功能
-    enable: true
-    # 默认模式 ("meting" API | "local" 本地)
-    mode: "meting"
-    # meting 模式专属配置
-    meting:
-        # Meting API 地址
-        meting_api: "https://api.i-meto.com/meting/api"
-        # 音乐平台
-        server: "netease"
-        # 类型 ("playlist" 歌单 | "song" 单曲)
-        type: "playlist"
-        # 资源 ID
-        id: "2161912966"
-    # local 模式专属配置
-    local:
-        # 播放列表
-        playlist:
-            - # 列表示例
-                # 序号
-                id: 1
-                # 标题
-                title: "深海之息"
-                # 作者
-                artist: "Youzee Music"
-                # 封面
-                cover: "https://p1.music.126.net/PhKOqFtljgHDDpKYM2ADUA==/109951169858309716.jpg"
-                # 路径
-                url: "assets/music/深海之息.m4a"
-                # 时长
-                duration: 146
-    # 是否自动播放
-    autoplay: true
+    enable: false
 
 # 看板娘配置
 pio:

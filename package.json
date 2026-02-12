@@ -1,8 +1,8 @@
 {
-	"name": "twilight",
+	"name": "airborne-observer",
 	"type": "module",
 	"version": "1.0.0",
-	"description": "A blog template",
+	"description": "Airborne Observer - Drone photography and videography portfolio website",
 	"scripts": {
 		"type-check": "tsc --noEmit --isolatedDeclarations",
 		"check-stylus": "node scripts/compile-inline-stylus.cjs",

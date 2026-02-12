@@ -1,20 +1,40 @@
-# About This Site
+---
+title: "About Airborne Observer"
+published: 2026-02-12
+description: "Professional drone photography and videography portfolio services"
+tags: [About, Portfolio, Drone, Photography]
+category: About
+draft: false
+---
 
-Twilight is a CMS integrated static blog template built with [Astro](https://astro.build) framework.
+Airborne Observer is a professional drone photography and videography portfolio website built with [Astro](https://astro.build), showcasing aerial captures captured with a DJI Mavic 3 Pro.
 
-::github{repo="Spr-Aachen/Twilight"}
+## Our Mission
 
+We specialize in capturing stunning aerial perspectives that reveal the world from unique vantage points. From landscapes to architectural photography, we bring a bird's-eye view to every project.
 
-## Milestones
+## Equipment
 
-- Integrated content management system in [#1](https://github.com/Spr-Aachen/Twilight/pull/1)
-- Seamless wallpaper mode switching in [#2](https://github.com/Spr-Aachen/Twilight/pull/2)
-- Dynamic content container response in [#47](https://github.com/Spr-Aachen/Twilight/pull/47)
-- Seamless page component loading in [#48](https://github.com/Spr-Aachen/Twilight/pull/48)
-- Smart music playback handling in [#49](https://github.com/Spr-Aachen/Twilight/pull/49)
-- Infinite-level navigation system in [#50](https://github.com/Spr-Aachen/Twilight/pull/50)
-- Comprehensive statistics dashboard in [#51](https://github.com/Spr-Aachen/Twilight/pull/51)
-- Low-barrier configuration scheme in [#58](https://github.com/Spr-Aachen/Twilight/pull/58)
-- Dynamic breakpoint handling in [#68](https://github.com/Spr-Aachen/Twilight/pull/68)
-- Advanced content management in [#73](https://github.com/Spr-Aachen/Twilight/pull/73)
-- Nested category support in [#74](https://github.com/Spr-Aachen/Twilight/pull/74)
+- **Drone**: DJI Mavic 3 Pro
+- **Camera**: 4/3 CMOS Hasselblad camera
+- **Video Capabilities**: 5.1K video recording
+- **Photo Capabilities**: 20-megapixel stills
+
+## Services
+
+- **Aerial Photography**: High-resolution landscape, architectural, and event photography
+- **Aerial Videography**: Cinematic drone footage for commercial and creative projects
+- **Real Estate**: Comprehensive aerial coverage for property listings
+- **Event Coverage**: Unique aerial perspectives for special occasions
+
+## Acknowledgments
+
+We extend our gratitude to the open-source community, particularly:
+
+- The [Astro](https://astro.build) team for creating such a powerful framework
+- [Spr-Aachen](https://github.com/Spr-Aachen) for developing the versatile Twilight theme that serves as our foundation
+- The broader web development community for the tools and libraries that make this project possible
+
+---
+
+*Capturing the world from above, one flight at a time.*

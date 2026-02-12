@@ -1,0 +1,107 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    class?: string;
+    style?: string;
+    side?: string;
+}
+
+const { class: className = "", style, side } = Astro.props;
+
+// Mock flight statistics - you can update these with real data
+const flightStats = {
+    totalFlights: 71,
+    totalHours: 14.5,
+    totalDistance: 68.5, // in km
+    averageFlightTime: 29, // in minutes
+    longestFlight: 31, // in minutes
+    favoriteLocation: "Coastal Areas"
+};
+---
+
+<div class={"pb-4 card-base " + className} {style}>
+    <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]">Flight Statistics</div>
+    
+    <div class="px-4 space-y-4">
+        <!-- Total Flights -->
+        <div class="flex items-center justify-between p-3 rounded-lg bg-(--card-bg) border border-(--line-color)">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-(--primary)/10 flex items-center justify-center">
+                    <Icon name="material-symbols:flight" class="text-(--primary) text-lg" />
+                </div>
+                <div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Total Flights</div>
+                    <div class="font-semibold text-neutral-900 dark:text-neutral-100">{flightStats.totalFlights}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flight Hours -->
+        <div class="flex items-center justify-between p-3 rounded-lg bg-(--card-bg) border border-(--line-color)">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-(--primary)/10 flex items-center justify-center">
+                    <Icon name="material-symbols:schedule" class="text-(--primary) text-lg" />
+                </div>
+                <div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Flight Hours</div>
+                    <div class="font-semibold text-neutral-900 dark:text-neutral-100">{flightStats.totalHours}h</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Distance -->
+        <div class="flex items-center justify-between p-3 rounded-lg bg-(--card-bg) border border-(--line-color)">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-(--primary)/10 flex items-center justify-center">
+                    <Icon name="material-symbols:straighten" class="text-(--primary) text-lg" />
+                </div>
+                <div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Total Distance</div>
+                    <div class="font-semibold text-neutral-900 dark:text-neutral-100">{flightStats.totalDistance} km</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Average Flight Time -->
+        <div class="flex items-center justify-between p-3 rounded-lg bg-(--card-bg) border border-(--line-color)">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-(--primary)/10 flex items-center justify-center">
+                    <Icon name="material-symbols:timer" class="text-(--primary) text-lg" />
+                </div>
+                <div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Avg Flight Time</div>
+                    <div class="font-semibold text-neutral-900 dark:text-neutral-100">{flightStats.averageFlightTime} min</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Longest Flight -->
+        <div class="flex items-center justify-between p-3 rounded-lg bg-(--card-bg) border border-(--line-color)">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-(--primary)/10 flex items-center justify-center">
+                    <Icon name="material-symbols:trending-up" class="text-(--primary) text-lg" />
+                </div>
+                <div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Longest Flight</div>
+                    <div class="font-semibold text-neutral-900 dark:text-neutral-100">{flightStats.longestFlight} min</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Favorite Location -->
+        <div class="flex items-center justify-between p-3 rounded-lg bg-(--card-bg) border border-(--line-color)">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-(--primary)/10 flex items-center justify-center">
+                    <Icon name="material-symbols:location-on" class="text-(--primary) text-lg" />
+                </div>
+                <div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Favorite Location</div>
+                    <div class="font-semibold text-neutral-900 dark:text-neutral-100">{flightStats.favoriteLocation}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
