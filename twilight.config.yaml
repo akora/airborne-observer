@@ -138,10 +138,10 @@ site:
             interval: 1.5
     # favicon 配置
     favicon:
-        - src: "/favicon/icon-light.png"
+        - src: "/favicon/icon-light.ico"
           theme: "light"
           sizes: "96x96"
-        - src: "/favicon/icon-dark.png"
+        - src: "/favicon/icon-dark.ico"
           theme: "dark"
           sizes: "96x96"
     # bangumi 配置
