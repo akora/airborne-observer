@@ -138,6 +138,12 @@ site:
             interval: 1.5
     # favicon 配置
     favicon:
+        - src: "/favicon/icon-light.svg"
+          theme: "light"
+          type: "image/svg+xml"
+        - src: "/favicon/icon-dark.svg"
+          theme: "dark"
+          type: "image/svg+xml"
         - src: "/favicon/icon-light.ico"
           theme: "light"
           sizes: "96x96"
@@ -146,6 +152,16 @@ site:
           sizes: "96x96"
         - src: "/favicon/icon.png"
           sizes: "96x96"
+        - src: "/favicon/icon.ico"
+          sizes: "96x96"
+        # iOS Web App Icons
+        - src: "/favicon/apple-touch-icon.png"
+          sizes: "180x180"
+          rel: "apple-touch-icon"
+        - src: "/favicon/icon-192.png"
+          sizes: "192x192"
+        - src: "/favicon/icon-512.png"
+          sizes: "512x512"
     # bangumi 配置
     bangumi:
         # 用户 ID

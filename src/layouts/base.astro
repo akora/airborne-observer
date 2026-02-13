@@ -164,12 +164,19 @@ const umamiScripts = umamiConfig.scripts || ""; // 获取Umami scripts配置
         <meta name="generator" content={Astro.generator} />
         <!-- favicons -->
         {favicons.map(favicon => (
-            <link rel="icon"
+            <link rel={favicon.rel || "icon"}
                   href={favicon.src.startsWith('/') ? url(favicon.src) : favicon.src}
                   sizes={favicon.sizes}
+                  type={favicon.type}
                   media={favicon.theme && `(prefers-color-scheme: ${favicon.theme})`}
             />
         ))}
+        <!-- iOS Web App -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content={siteConfig.title}>
+        <!-- Web App Manifest -->
+        <link rel="manifest" href="/manifest.json">
         <!-- Set the theme before the page is rendered to avoid a flash -->
         <script is:inline define:vars={{LIGHT_MODE, DARK_MODE, SYSTEM_MODE, BANNER_HEIGHT_EXTEND, PAGE_WIDTH, NAVBAR_HEIGHT, configHue, defaultTheme: siteConfig.defaultTheme}}>
             // Load the theme from local storage

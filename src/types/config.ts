@@ -17,6 +17,8 @@ export type Favicon = {
     src: string;
     theme?: "light" | "dark";
     sizes?: string;
+    type?: string;
+    rel?: string;
 };
 
 
