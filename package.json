@@ -10,7 +10,7 @@
 		"format": "biome format --write ./src",
 		"check": "astro check",
 		"dev": "astro dev",
-		"build": "node scripts/build-with-pagefind.cjs",
+		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
 		"new-post": "node scripts/new-post.js"
