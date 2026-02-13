@@ -144,6 +144,8 @@ site:
         - src: "/favicon/icon-dark.ico"
           theme: "dark"
           sizes: "96x96"
+        - src: "/favicon/icon.png"
+          sizes: "96x96"
     # bangumi 配置
     bangumi:
         # 用户 ID
