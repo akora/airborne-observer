@@ -117,6 +117,12 @@ const bannerOffset =
 
 const umamiEnabled = umamiConfig.enabled || false;
 const umamiScripts = umamiConfig.scripts || ""; // 获取Umami scripts配置
+
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const shouldLoadGa =
+    typeof gaMeasurementId === "string" &&
+    gaMeasurementId.length > 0 &&
+    !Astro.url.pathname.startsWith("/admin");
 ---
 
 <!DOCTYPE html>
@@ -225,6 +231,17 @@ const umamiScripts = umamiConfig.scripts || ""; // 获取Umami scripts配置
         <link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
         <!-- Umami Analytics -->
         {umamiEnabled && umamiScripts && <Fragment set:html={umamiScripts} />}
+        {shouldLoadGa && (
+            <>
+                <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+                <script is:inline define:vars={{ gaMeasurementId }}>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', gaMeasurementId);
+                </script>
+            </>
+        )}
     </head>
 
     <body class=" min-h-screen " class:list={[{"is-home": isHomePage, "enable-banner": enableBanner}]}
