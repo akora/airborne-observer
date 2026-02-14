@@ -36,16 +36,22 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 // Choose adapter depending on deployment environment
 const adapter = process.env.CF_PAGES ? cloudflarePages() : vercel({ mode: "serverless" });
 
+const enableDecapAdmin = process.env.CONTEXT !== "production";
+
 export default defineConfig({
     site: siteConfig.siteURL,
     base: "/",
     trailingSlash: "always",
     adapter: adapter,
     integrations: [
-        decapCmsOauth({
-            decapCMSVersion: "3.9.0",
-            oauthDisabled: true, // Disable it to use oauth, requires .env configuration
-        }),
+        ...(enableDecapAdmin
+            ? [
+                  decapCmsOauth({
+                      decapCMSVersion: "3.9.0",
+                      oauthDisabled: true, // Disable it to use oauth, requires .env configuration
+                  }),
+              ]
+            : []),
         swup({
             theme: false,
             animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
