@@ -5,7 +5,7 @@ site:
     # 站点标题
     title: "Airborne Observer"
     # 站点副标题
-    subtitle: "Drone Photography & Videography Portfolio"
+    subtitle: "Drone Photography & Videography Portfolio by Andras Kora"
     # 语言配置
     lang: "en"
     # 翻译配置
@@ -138,26 +138,17 @@ site:
             interval: 1.5
     # favicon 配置
     favicon:
-        - src: "/favicon/icon-light.svg"
-          theme: "light"
+        # Main favicon
+        - src: "/favicon/favicon.ico"
+          sizes: "96x96"
+        # SVG favicon
+        - src: "/favicon/favicon.svg"
           type: "image/svg+xml"
-        - src: "/favicon/icon-dark.svg"
-          theme: "dark"
-          type: "image/svg+xml"
-        - src: "/favicon/icon-light.ico"
-          theme: "light"
-          sizes: "96x96"
-        - src: "/favicon/icon-dark.ico"
-          theme: "dark"
-          sizes: "96x96"
-        - src: "/favicon/icon.png"
-          sizes: "96x96"
-        - src: "/favicon/icon.ico"
-          sizes: "96x96"
-        # iOS Web App Icons
+        # Apple Touch Icon for iOS devices
         - src: "/favicon/apple-touch-icon.png"
           sizes: "180x180"
           rel: "apple-touch-icon"
+        # PWA icons
         - src: "/favicon/icon-192.png"
           sizes: "192x192"
         - src: "/favicon/icon-512.png"
