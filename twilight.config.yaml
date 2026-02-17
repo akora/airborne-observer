@@ -145,7 +145,7 @@ site:
         - src: "/favicon/favicon.svg"
           type: "image/svg+xml"
         # Apple Touch Icon for iOS devices
-        - src: "/favicon/apple-touch-icon.png"
+        - src: "/favicon/apple-touch-icon.png?t=1739760120"
           sizes: "180x180"
           rel: "apple-touch-icon"
         # PWA icons
