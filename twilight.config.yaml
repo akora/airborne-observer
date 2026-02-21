@@ -139,19 +139,19 @@ site:
     # favicon 配置
     favicon:
         # Main favicon
-        - src: "/favicon/favicon.ico?t=1739760120"
+        - src: "/favicon/favicon.ico?t=1771705465"
           sizes: "96x96"
-        # SVG favicon
-        - src: "/favicon/favicon.svg?t=1739760120"
+        # SVG favicon (supports light/dark mode via CSS media query)
+        - src: "/favicon/favicon.svg?t=1771705465"
           type: "image/svg+xml"
         # Apple Touch Icon for iOS devices
-        - src: "/favicon/apple-touch-icon.png?t=1739760120"
+        - src: "/favicon/apple-touch-icon.png?t=1771705465"
           sizes: "180x180"
           rel: "apple-touch-icon"
         # PWA icons
-        - src: "/favicon/icon-192.png?t=1739760120"
+        - src: "/favicon/icon-192.png?t=1771705465"
           sizes: "192x192"
-        - src: "/favicon/icon-512.png?t=1739760120"
+        - src: "/favicon/icon-512.png?t=1771705465"
           sizes: "512x512"
     # bangumi 配置
     bangumi:
