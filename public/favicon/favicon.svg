@@ -1,50 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1024 1024" width="1024" height="1024">
   <defs>
-    <!-- Background gradient: light gray in light mode, dark gray in dark mode -->
-    <linearGradient x1="0" x2="1" id="BgGrad" gradientUnits="userSpaceOnUse">
-      <stop class="bg-s" offset="0"/>
-      <stop class="bg-m" offset=".4983774"/>
-      <stop class="bg-e" offset="1"/>
+    <!-- Dark mode: background gradient -->
+    <linearGradient x1="0" x2="1" id="Gradient_bg_dark" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#424242"/>
+      <stop offset=".4983774" stop-color="#323232"/>
+      <stop offset="1" stop-color="#212121"/>
     </linearGradient>
-    <linearGradient id="Obj_BgGrad" xl:href="#BgGrad" gradientTransform="translate(0 11368684e-20) rotate(45) scale(1448.1547)"/>
+    <linearGradient id="Obj_Gradient_bg_dark" xl:href="#Gradient_bg_dark" gradientTransform="translate(0 11368684e-20) rotate(45) scale(1448.1547)"/>
 
-    <!-- Ring gradient: dark gray in light mode, white/gray in dark mode -->
-    <linearGradient x1="0" x2="1" id="RingGrad" gradientUnits="userSpaceOnUse">
-      <stop class="ring-s" offset="0"/>
-      <stop class="ring-e" offset="1"/>
+    <!-- Dark mode: logo gradient -->
+    <linearGradient x1="0" x2="1" id="Gradient_logo_dark" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="white"/>
+      <stop offset="1" stop-color="#919191"/>
     </linearGradient>
-    <linearGradient id="Obj_RingGrad_outer" xl:href="#RingGrad" gradientTransform="translate(512 182) rotate(90) scale(660)"/>
-    <linearGradient id="Obj_RingGrad_inner" xl:href="#RingGrad" gradientTransform="translate(512 272) rotate(90) scale(480)"/>
+    <linearGradient id="Obj_Gradient_logo_dark_ring"   xl:href="#Gradient_logo_dark" gradientTransform="translate(512 182) rotate(90) scale(660)"/>
+    <linearGradient id="Obj_Gradient_logo_dark_circle" xl:href="#Gradient_logo_dark" gradientTransform="translate(512 292) rotate(90) scale(440)"/>
+
+    <!-- Light mode: background gradient -->
+    <linearGradient x1="0" x2="1" id="Gradient_bg_light" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ebebeb"/>
+      <stop offset=".4983774" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#c1c1c1"/>
+    </linearGradient>
+    <linearGradient id="Obj_Gradient_bg_light" xl:href="#Gradient_bg_light" gradientTransform="translate(0 11368684e-20) rotate(45) scale(1448.1547)"/>
+
+    <!-- Light mode: logo gradient -->
+    <linearGradient x1="0" x2="1" id="Gradient_logo_light" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#919191"/>
+      <stop offset="1" stop-color="#212121"/>
+    </linearGradient>
+    <linearGradient id="Obj_Gradient_logo_light_ring"   xl:href="#Gradient_logo_light" gradientTransform="translate(512 182) rotate(90) scale(660)"/>
+    <linearGradient id="Obj_Gradient_logo_light_circle" xl:href="#Gradient_logo_light" gradientTransform="translate(512 292) rotate(90) scale(440)"/>
   </defs>
 
   <style>
-    /* Default: light mode — light gray background, dark gray rings */
-    .bg-s   { stop-color: #ebebeb; }
-    .bg-m   { stop-color: #d6d6d6; }
-    .bg-e   { stop-color: #c1c1c1; }
-    .ring-s { stop-color: #424242; }
-    .ring-e { stop-color: #212121; }
+    /* Default: light mode */
+    .group-dark  { display: none; }
+    .group-light { display: block; }
 
-    /* Dark mode — dark gray background, white/gray rings */
     @media (prefers-color-scheme: dark) {
-      .bg-s   { stop-color: #424242; }
-      .bg-m   { stop-color: #323232; }
-      .bg-e   { stop-color: #212121; }
-      .ring-s { stop-color: #ffffff; }
-      .ring-e { stop-color: #919191; }
+      .group-dark  { display: block; }
+      .group-light { display: none; }
     }
   </style>
 
-  <g stroke-opacity="1" stroke-dasharray="none" stroke="none" fill-opacity="1" fill="none">
+  <!-- Dark mode group -->
+  <g class="group-dark" fill-opacity="1" stroke-opacity="1" fill="none" stroke="none" stroke-dasharray="none">
+    <path d="M 180 0 L 844 0 C 943.4113 6087184e-21 1024 80.588745 1024 180 L 1024 844 C 1024 943.4113 943.4113 1024 844 1024 L 180 1024 C 80.588745 1024 12174368e-21 943.4113 0 844 L 2842171e-20 180 C 40596077e-21 80.588745 80.588745 -12174368e-21 180 0 Z" fill="url(#Obj_Gradient_bg_dark)"/>
+    <path d="M 745.3449 278.65514 C 616.472 149.78162 407.528 149.78162 278.65514 278.65514 C 149.78162 407.528 149.78162 616.472 278.65514 745.3449 C 407.528 874.2184 616.472 874.2184 745.3449 745.3449 C 874.2184 616.472 874.2184 407.528 745.3449 278.65514 M 717.3435 306.65652 C 830.7522 420.06463 830.7522 603.9354 717.3435 717.3435 C 603.9354 830.7522 420.06463 830.7522 306.65652 717.3435 C 193.24783 603.9354 193.24783 420.06463 306.65652 306.65652 C 420.06463 193.24783 603.9354 193.24783 717.3435 306.65652" fill="url(#Obj_Gradient_logo_dark_ring)"/>
+    <path d="M 667.5633 356.4367 C 753.479 442.35196 753.479 581.64804 667.5633 667.5633 C 581.64804 753.479 442.35196 753.479 356.4367 667.5633 C 270.52096 581.64804 270.52096 442.35196 356.4367 356.4367 C 442.35196 270.52096 581.64804 270.52096 667.5633 356.4367" fill="url(#Obj_Gradient_logo_dark_circle)"/>
+  </g>
 
-    <!-- Rounded rectangle background -->
-    <path d="M 180 0 L 844 0 C 943.4113 6087184e-21 1024 80.588745 1024 180 L 1024 844 C 1024 943.4113 943.4113 1024 844 1024 L 180 1024 C 80.588745 1024 12174368e-21 943.4113 0 844 L 2842171e-20 180 C 40596077e-21 80.588745 80.588745 -12174368e-21 180 0 Z" fill="url(#Obj_BgGrad)"/>
-
-    <!-- Outer concentric ring -->
-    <path d="M 745.3449 278.65514 C 616.472 149.78162 407.528 149.78162 278.65514 278.65514 C 149.78162 407.528 149.78162 616.472 278.65514 745.3449 C 407.528 874.2184 616.472 874.2184 745.3449 745.3449 C 874.2184 616.472 874.2184 407.528 745.3449 278.65514 M 717.3435 306.65652 C 830.7522 420.06463 830.7522 603.9354 717.3435 717.3435 C 603.9354 830.7522 420.06463 830.7522 306.65652 717.3435 C 193.24783 603.9354 193.24783 420.06463 306.65652 306.65652 C 420.06463 193.24783 603.9354 193.24783 717.3435 306.65652" fill="url(#Obj_RingGrad_outer)"/>
-
-    <!-- Inner concentric ring -->
-    <path d="M 681.7054 342.29456 C 775.4317 436.0203 775.4317 587.9797 681.7054 681.7054 C 587.9797 775.4317 436.0203 775.4317 342.29456 681.7054 C 248.56832 587.9797 248.56832 436.0203 342.29456 342.29456 C 436.0203 248.56832 587.9797 248.56832 681.7054 342.29456" fill="url(#Obj_RingGrad_inner)"/>
-
+  <!-- Light mode group -->
+  <g class="group-light" fill-opacity="1" stroke-opacity="1" fill="none" stroke="none" stroke-dasharray="none">
+    <path d="M 180 0 L 844 0 C 943.4113 6087184e-21 1024 80.588745 1024 180 L 1024 844 C 1024 943.4113 943.4113 1024 844 1024 L 180 1024 C 80.588745 1024 12174368e-21 943.4113 0 844 L 2842171e-20 180 C 40596077e-21 80.588745 80.588745 -12174368e-21 180 0 Z" fill="url(#Obj_Gradient_bg_light)"/>
+    <path d="M 745.3449 278.65514 C 616.472 149.78162 407.528 149.78162 278.65514 278.65514 C 149.78162 407.528 149.78162 616.472 278.65514 745.3449 C 407.528 874.2184 616.472 874.2184 745.3449 745.3449 C 874.2184 616.472 874.2184 407.528 745.3449 278.65514 M 717.3435 306.65652 C 830.7522 420.06463 830.7522 603.9354 717.3435 717.3435 C 603.9354 830.7522 420.06463 830.7522 306.65652 717.3435 C 193.24783 603.9354 193.24783 420.06463 306.65652 306.65652 C 420.06463 193.24783 603.9354 193.24783 717.3435 306.65652" fill="url(#Obj_Gradient_logo_light_ring)"/>
+    <path d="M 667.5633 356.4367 C 753.479 442.35196 753.479 581.64804 667.5633 667.5633 C 581.64804 753.479 442.35196 753.479 356.4367 667.5633 C 270.52096 581.64804 270.52096 442.35196 356.4367 356.4367 C 442.35196 270.52096 581.64804 270.52096 667.5633 356.4367" fill="url(#Obj_Gradient_logo_light_circle)"/>
   </g>
 </svg>

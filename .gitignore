@@ -19,3 +19,5 @@ pnpm-debug.log*
 
 # private config
 .env
+# Local Netlify folder
+.netlify
